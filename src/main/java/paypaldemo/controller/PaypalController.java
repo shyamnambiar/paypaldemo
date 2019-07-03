@@ -15,7 +15,7 @@ public class PaypalController {
 	@GetMapping("/paypal")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		System.out.println("inside controller");
-		final String uri = "http://localhost:8001/paypal/post";
+		final String uri = "http://localhost:8080/paypal/post";
 		RestTemplate restTemplate = new RestTemplate();
 		PaypalResponse response = new PaypalResponse();
 		response = restTemplate.postForObject( uri, response, PaypalResponse.class);
